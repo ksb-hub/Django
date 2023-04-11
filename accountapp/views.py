@@ -1,4 +1,4 @@
-from django.http import HttpResponse, HttpResponseRedirect
+from django.http import HttpResponseRedirect
 from django.shortcuts import render
 from django.urls import reverse
 
@@ -15,7 +15,6 @@ def hello_world(requset):
         new_hello_world.text = temp
         new_hello_world.save()
 
-        hello_world_list = HelloWorld.objects.all()
         return HttpResponseRedirect(reverse('accountapp:hello_world'))
     else:
         hello_world_list = HelloWorld.objects.all()
